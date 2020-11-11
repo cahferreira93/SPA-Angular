@@ -12,8 +12,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   valor: number;
+  exibeTabela:  boolean = false;
 
-  ELEMENT_DATA: alunos[] = [
+  listaAlunos: alunos[] = [
     { nome: 'Camila', idade: 27, email: 'camila.taruma@gmail.com', curso: 'Ciencia da Computacao' },
     { nome: 'Teste', idade: 25, email: 'Teste@gmail.com', curso: 'Analise e desenvolvimento de sistemas' },
     { nome: 'Teste 2', idade: 31, email: 'Teste2@gmail.com', curso: 'Engenharia da computacao' },
@@ -21,7 +22,6 @@ export class HomeComponent implements OnInit {
   ];
 
   displayedColumns: string[] = ['Nome', 'Idade', 'E-mail', 'Curso'];
-  dataSource = this.ELEMENT_DATA;
 
   ngOnInit(): void {
     this.valor = 5;
@@ -33,6 +33,10 @@ export class HomeComponent implements OnInit {
 
   reiniciarValor() {
     this.valor = 0;
+  }
+
+  exibirTabela(){
+    this.exibeTabela = true;
   }
 
 }

@@ -11,12 +11,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AlunosComponent } from './alunos/alunos.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
+import { ProfessoresComponent } from './professores/professores.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AlunosComponent
+    AlunosComponent,
+    ProfessoresComponent
   ],
   imports: [
     BrowserModule,
