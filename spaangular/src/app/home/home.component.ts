@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ThrowStmt } from '@angular/compiler';
+import { Component, Input, OnInit } from '@angular/core';
+import { alunos } from '../model/alunos'
 
 @Component({
   selector: 'spa-home',
@@ -9,7 +11,28 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  valor: number;
+
+  ELEMENT_DATA: alunos[] = [
+    { nome: 'Camila', idade: 27, email: 'camila.taruma@gmail.com', curso: 'Ciencia da Computacao' },
+    { nome: 'Teste', idade: 25, email: 'Teste@gmail.com', curso: 'Analise e desenvolvimento de sistemas' },
+    { nome: 'Teste 2', idade: 31, email: 'Teste2@gmail.com', curso: 'Engenharia da computacao' },
+    { nome: 'Teste 3', idade: 45, email: 'Teste3@gmail.com', curso: 'Sistemas da informacao' }
+  ];
+
+  displayedColumns: string[] = ['Nome', 'Idade', 'E-mail', 'Curso'];
+  dataSource = this.ELEMENT_DATA;
+
   ngOnInit(): void {
+    this.valor = 5;
+  }
+
+  mudarValor() {
+    this.valor++;
+  }
+
+  reiniciarValor() {
+    this.valor = 0;
   }
 
 }
